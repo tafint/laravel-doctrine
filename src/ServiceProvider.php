@@ -13,8 +13,7 @@
 	use Doctrine\ORM\Mapping\Driver\YamlDriver;
 	use Doctrine\ORM\Mapping\Driver\XmlDriver;
 	use Doctrine\Common\Persistence\Mapping\Driver\StaticPHPDriver;
-        use Atrauzzi\LaravelDoctrine\Listener\Metadata\TablePrefix;
-
+    use Atrauzzi\LaravelDoctrine\Listener\Metadata\TablePrefix;
 
     /**
      * Class ServiceProvider
@@ -253,12 +252,12 @@
         protected function createEventManager()
         {
             $eventManager = new EventManager();
-            
+
             // Trap doctrine events, to support entity table prefix
             if ($prefix = config('doctrine.connection.prefix')) {
                 $eventManager->addEventListener(Events::loadClassMetadata, new TablePrefix($prefix));
             }
-            
+
             return $eventManager;
         }
 

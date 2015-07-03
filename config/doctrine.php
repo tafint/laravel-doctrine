@@ -12,6 +12,8 @@
         ],
         [
             'driver' => 'annotation',
+            // 'paths' => glob(__DIR__ . '/../app/Entity', GLOB_ONLYDIR),
+            // 'simple' => false,
             // 'namespace' => 'App',
             // 'alias' => 'DoctrineModel'
         ],
@@ -68,14 +70,14 @@
     ],
     'connections' => [
         // Override your laravel environment database selection here if desired
-         'default' => 'mysql',
+        'default' => 'mysql',
         // Override your laravel values here if desired.
         'mysql' => [
             'driver' => 'pdo_mysql',
             'host' => env('DB_HOST', 'localhost'),
             'dbname' => env('DB_DATABASE', 'forge'),
-            'user'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
+            'user' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'prefix' => '',
             'charset' => 'utf8',
             'driverOptions' => array(
@@ -165,6 +167,6 @@
     ],
     'auth' => [
         //'authenticator' => 'Atrauzzi\LaravelDoctrine\DoctrineAuthenticator',
-        //'model' => 'App\User'
+        //'model' => 'App\User',
     ]
 ];
