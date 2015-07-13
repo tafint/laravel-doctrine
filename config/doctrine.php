@@ -75,8 +75,8 @@
         'mysql' => [
             'driver' => 'pdo_mysql',
             'host' => env('DB_HOST', 'localhost'),
-            'dbname' => env('DB_DATABASE', 'forge'),
-            'user' => env('DB_USERNAME', 'forge'),
+            'dbname' => env('DB_DATABASE'),
+            'user' => env('DB_USERNAME'),
             'password' => env('DB_PASSWORD', ''),
             'prefix' => '',
             'charset' => 'utf8',
@@ -101,7 +101,7 @@
      */
     'cache' => [
         // Remove or set to null for no cache
-        'provider' => env('CACHE_DRIVER', 'file'),
+        'provider' => env('CACHE_DRIVER'),
         'file' => [
             'directory' => storage_path('framework/cache'),
             'extension' => '.doctrinecache.data'
@@ -132,7 +132,7 @@
      * http://doctrine-orm.readthedocs.org/en/latest/reference/advanced-configuration.html
      */
     'proxy_classes' => [
-        'auto_generate' => 'local' === env('APP_ENV', 'local'),
+        'auto_generate' => 'local' === env('APP_ENV', 'production') ? 2 : 0,
         'directory' => storage_path('framework/proxies'),
         'namespace' => null,
     ],
